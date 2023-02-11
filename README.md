@@ -60,7 +60,7 @@ docker-compose down -v
 #### Copy `ca.crt` file
 
 ```sh
-docker cp elastic_es01_1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/
+docker cp elastic-docker_es01_1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/
 ```
 
 #### Curl command
