@@ -60,7 +60,7 @@ docker-compose down -v
 #### Copy `ca.crt` file
 
 ```sh
-docker cp elastic-docker_es01_1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/
+docker cp elastic-docker-es01-1:/usr/share/elasticsearch/config/certs/ca/ca.crt /tmp/
 ```
 
 #### Curl command
@@ -72,6 +72,15 @@ curl --cacert /tmp/ca.crt -u elastic:pass@123 https://localhost:9200
 ## Logstash
 
 1. You need to have pipeline configuration files on `LOGSTASH_PIPELINE_PATH` location. If there will be no file, Logstash will throw an error and get exit.
+
+### Installing plugin
+
+Either you can add in `docker-compose.yml` file or you can simply run command like below while container is up.
+
+```sh
+docker exec -it elastic-docker-logstash-1 bin/logstash-plugin install logstash-output-google_pubsub
+```
+
 
 # NOTE 
 
