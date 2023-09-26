@@ -71,7 +71,9 @@ curl --cacert /tmp/ca.crt -u elastic:pass@123 https://localhost:9200
 
 ## Logstash
 
-1. You need to have pipeline configuration files on `LOGSTASH_PIPELINE_PATH` location. If there will be no file, Logstash will throw an error and get exit.
+### Pipeline config files
+
+Place all `*.conf` files in `logstash_external_configs/pipeline/`. You can create folder and files in `logstash_external_configs` which will get mounted on `/usr/share/logstash/logstash_external_configs` in container.
 
 ### Installing plugin
 
