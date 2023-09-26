@@ -147,9 +147,12 @@ services:
         condition: service_healthy
     image: docker.elastic.co/logstash/logstash:${STACK_VERSION}
     volumes:
-      - ${LOGSTASH_PIPELINE_PATH}:/usr/share/logstash/pipeline/
+      - ${LOGSTASH_EXTERNAL_CONFIGS}:/usr/share/logstash/logstash_external_configs
     ports:
       - 4000:4000 # my custom port
+    environment:
+      - XPACK_MONITORING_ENABLED=false
+      - path.config=/usr/share/logstash/logstash_external_configs/pipeline
     mem_limit: ${MEM_LIMIT}
      
 volumes:
