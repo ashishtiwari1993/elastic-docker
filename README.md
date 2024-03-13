@@ -13,10 +13,10 @@ Tested on the below configuration.
 
 This setup will include
 
-- [x] Elasticsearch
-- [x] Kibana
-- [x] Logstash
-- [x] APM
+- ✅ Elasticsearch
+- ✅ Kibana
+- ✅ Logstash
+- ✅ APM Server
 
 # Setup
 
